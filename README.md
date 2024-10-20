@@ -9,6 +9,9 @@ This repository is a demo for managing files in Google Drive. It showcases funct
 - Download files from Google Drive
 - Delete files from Google Drive
 
+## Watch Video Tutorial
+[Watch the full tutorial on YouTube](https://www.youtube.com/watch?v=RkRuG4Kg_dU)
+
 ## Setup Instructions
 
 1. **Create a Service Account:**

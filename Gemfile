@@ -53,3 +53,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "google-apis-drive_v3", "~> 0.58.0"

@@ -1,0 +1,36 @@
+<div class="container mt-3">
+  <h1>Google Drive Files</h1>
+
+  <%= render "shared/messages" %>
+  <%= render "form" %>
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Last modified</th>
+      <th class="text-end">Operations</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @files.each_with_index do |file, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= file.name %></td>
+        <td><%= number_to_human_size(file.size) %></td>
+        <td><%= file.modified_time %></td>
+        <td class="text-end">
+          <%= link_to download_file_path(file.id), target: '_blank', class: 'btn btn-primary me-2' do %>
+            <i class="fas fa-download"></i>
+          <% end %>
+          <%= link_to destroy_file_path(file.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-danger' do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
